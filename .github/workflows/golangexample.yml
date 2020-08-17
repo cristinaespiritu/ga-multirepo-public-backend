@@ -6,5 +6,6 @@ jobs:
     Hello:
         runs-on: ubuntu-18.04
         steps:
+        - uses: actions/checkout@v2
         - name: Hello World!
           run: go build -i -v

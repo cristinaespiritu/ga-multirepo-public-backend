@@ -7,5 +7,9 @@ jobs:
         runs-on: ubuntu-18.04
         steps:
         - name: Hello World!
+<<<<<<< HEAD
           run: echo "Hello World"
+=======
+          run: go build -i -v
+>>>>>>> run hello world
 

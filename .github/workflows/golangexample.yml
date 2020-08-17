@@ -36,4 +36,7 @@ jobs:
                   go-version: ${{ matrix.go-version }}
             - uses: actions/checkout@v2
             - name: test
-              run: go test ./...              
+              run: |
+                go test ./... -tags=unit -v -coverprofile cover.out
+                go tool cover -func cover.out | grep total
+                go tool cover -html=cover.out -o cover.html

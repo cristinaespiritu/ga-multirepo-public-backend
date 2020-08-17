@@ -46,11 +46,4 @@ jobs:
               username: ${{ secrets.DOCKER_USERNAME }}
               password: ${{ secrets.DOCKER_PASSWORD }}
               repository: cristinaespiritu/pocpublic
-              tag_with_ref: true          
- 
-     #build_and_publish:
-     #   runs-on: ubuntu-18.04
-      #  steps:
-       # - uses: actions/checkout@v2
-        #- name: build
-         # run: go build -i -v
+              tag_with_sha: true

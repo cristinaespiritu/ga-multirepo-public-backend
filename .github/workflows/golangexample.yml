@@ -43,10 +43,11 @@ jobs:
                 go test ./... -tags=unit -v -coverprofile cover.out
                 go tool cover -func cover.out | grep total
                 go tool cover -html=cover.out -o cover.html
-    
+
     build_and_publish:
         runs-on: ubuntu-latest
         needs: [lint, test]
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         steps:
         - name: checkout the repo
           uses: actions/checkout@v2
